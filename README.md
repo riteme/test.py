@@ -12,7 +12,7 @@ Most of time, run
 ```
 to run all the unittests.
 
-If you want to run specific test, run:
+If you want to run specific tests, run:
 ```shell
 ./run.py [filename 1] [filename 2] ...
 ```
@@ -39,7 +39,11 @@ PREPARE_BEGIN{
 
 TESTCASE("Case #1"){
     CHECK(1 + 1 == 2);  // Even 1 + 1 doesn't equal to 2, this won't break this testcase.
-    ASSERT(1 + 1 != 3);  // This would break this testcase.
+    ASSERT(1 + 1 == 3);  // This would break this testcase.
+}TESTCASE_END
+
+TESTCASE("Case #2"){
+    // Another testcase.
 }TESTCASE_END
 
 CLEANUP_BEGIN{
